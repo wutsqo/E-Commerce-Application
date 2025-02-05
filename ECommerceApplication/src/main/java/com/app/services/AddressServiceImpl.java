@@ -12,6 +12,7 @@ import com.app.entites.User;
 import com.app.exceptions.APIException;
 import com.app.exceptions.ResourceNotFoundException;
 import com.app.payloads.AddressDTO;
+import com.app.payloads.CreateAddressDTO;
 import com.app.repositories.AddressRepo;
 import com.app.repositories.UserRepo;
 
@@ -31,14 +32,14 @@ public class AddressServiceImpl implements AddressService {
 	private ModelMapper modelMapper;
 
 	@Override
-	public AddressDTO createAddress(AddressDTO addressDTO) {
+	public AddressDTO createAddress(CreateAddressDTO createAddressDTO) {
 
-		String country = addressDTO.getCountry();
-		String state = addressDTO.getState();
-		String city = addressDTO.getCity();
-		String pincode = addressDTO.getPincode();
-		String street = addressDTO.getStreet();
-		String buildingName = addressDTO.getBuildingName();
+		String country = createAddressDTO.getCountry();
+		String state = createAddressDTO.getState();
+		String city = createAddressDTO.getCity();
+		String pincode = createAddressDTO.getPincode();
+		String street = createAddressDTO.getStreet();
+		String buildingName = createAddressDTO.getBuildingName();
 
 		Address addressFromDB = addressRepo.findByCountryAndStateAndCityAndPincodeAndStreetAndBuildingName(country,
 				state, city, pincode, street, buildingName);
@@ -47,7 +48,7 @@ public class AddressServiceImpl implements AddressService {
 			throw new APIException("Address already exists with addressId: " + addressFromDB.getAddressId());
 		}
 
-		Address address = modelMapper.map(addressDTO, Address.class);
+		Address address = modelMapper.map(createAddressDTO, Address.class);
 
 		Address savedAddress = addressRepo.save(address);
 

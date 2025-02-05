@@ -4,10 +4,11 @@ import java.util.List;
 
 import com.app.entites.Address;
 import com.app.payloads.AddressDTO;
+import com.app.payloads.CreateAddressDTO;
 
 public interface AddressService {
 	
-	AddressDTO createAddress(AddressDTO addressDTO);
+	AddressDTO createAddress(CreateAddressDTO createAddressDTO);
 	
 	List<AddressDTO> getAddresses();
 	

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.entites.Address;
 import com.app.payloads.AddressDTO;
+import com.app.payloads.CreateAddressDTO;
 import com.app.services.AddressService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -31,8 +32,8 @@ public class AddressController {
 	private AddressService addressService;
 	
 	@PostMapping("/address")
-	public ResponseEntity<AddressDTO> createAddress(@Valid @RequestBody AddressDTO addressDTO) {
-		AddressDTO savedAddressDTO = addressService.createAddress(addressDTO);
+	public ResponseEntity<AddressDTO> createAddress(@Valid @RequestBody CreateAddressDTO createAdressDTO) {
+		AddressDTO savedAddressDTO = addressService.createAddress(createAdressDTO);
 		
 		return new ResponseEntity<AddressDTO>(savedAddressDTO, HttpStatus.CREATED);
 	}
