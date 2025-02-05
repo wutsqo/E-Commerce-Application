@@ -93,7 +93,7 @@ public class UserServiceImpl implements UserService {
 
 			return userDTO;
 		} catch (DataIntegrityViolationException e) {
-			throw new APIException("User already exists with emailId: " + userDTO.getEmail());
+			throw new APIException("User already exists with email: " + userDTO.getEmail());
 		}
 
 	}

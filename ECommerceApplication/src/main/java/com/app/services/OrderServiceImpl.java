@@ -65,9 +65,9 @@ public class OrderServiceImpl implements OrderService {
 	public ModelMapper modelMapper;
 
 	@Override
-	public OrderDTO placeOrder(String emailId, Long cartId, String paymentMethod) {
+	public OrderDTO placeOrder(String email, Long cartId, String paymentMethod) {
 
-		Cart cart = cartRepo.findCartByEmailAndCartId(emailId, cartId);
+		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
 
 		if (cart == null) {
 			throw new ResourceNotFoundException("Cart", "cartId", cartId);
@@ -75,7 +75,7 @@ public class OrderServiceImpl implements OrderService {
 
 		Order order = new Order();
 
-		order.setEmail(emailId);
+		order.setEmail(email);
 		order.setOrderDate(LocalDate.now());
 
 		order.setTotalAmount(cart.getTotalPrice());
@@ -131,23 +131,23 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public List<OrderDTO> getOrdersByUser(String emailId) {
-		List<Order> orders = orderRepo.findAllByEmail(emailId);
+	public List<OrderDTO> getOrdersByUser(String email) {
+		List<Order> orders = orderRepo.findAllByEmail(email);
 
 		List<OrderDTO> orderDTOs = orders.stream().map(order -> modelMapper.map(order, OrderDTO.class))
 				.collect(Collectors.toList());
 
 		if (orderDTOs.size() == 0) {
-			throw new APIException("No orders placed yet by the user with email: " + emailId);
+			throw new APIException("No orders placed yet by the user with email: " + email);
 		}
 
 		return orderDTOs;
 	}
 
 	@Override
-	public OrderDTO getOrder(String emailId, Long orderId) {
+	public OrderDTO getOrder(String email, Long orderId) {
 
-		Order order = orderRepo.findOrderByEmailAndOrderId(emailId, orderId);
+		Order order = orderRepo.findOrderByEmailAndOrderId(email, orderId);
 
 		if (order == null) {
 			throw new ResourceNotFoundException("Order", "orderId", orderId);
@@ -188,9 +188,9 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public OrderDTO updateOrder(String emailId, Long orderId, String orderStatus) {
+	public OrderDTO updateOrder(String email, Long orderId, String orderStatus) {
 
-		Order order = orderRepo.findOrderByEmailAndOrderId(emailId, orderId);
+		Order order = orderRepo.findOrderByEmailAndOrderId(email, orderId);
 
 		if (order == null) {
 			throw new ResourceNotFoundException("Order", "orderId", orderId);
