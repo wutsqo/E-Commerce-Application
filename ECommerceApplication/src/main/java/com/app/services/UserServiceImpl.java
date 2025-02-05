@@ -62,6 +62,7 @@ public class UserServiceImpl implements UserService {
 
 			Cart cart = new Cart();
 			user.setCart(cart);
+			cart.setUser(user);
 
 			Role role = roleRepo.findById(AppConstants.USER_ID).get();
 			user.getRoles().add(role);
@@ -85,8 +86,6 @@ public class UserServiceImpl implements UserService {
 			user.setAddresses(List.of(address));
 
 			User registeredUser = userRepo.save(user);
-
-			cart.setUser(registeredUser);
 
 			userDTO = modelMapper.map(registeredUser, UserDTO.class);
 
