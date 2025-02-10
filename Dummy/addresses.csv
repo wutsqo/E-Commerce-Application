@@ -1,0 +1,101 @@
+id,building_name,city,country,pincode,state,street
+1,Terrace,Saint Cloud,United States,2264,Minnesota,Scofield
+2,Pass,Rochester,United States,506,New York,Sloan
+3,Road,Sacramento,United States,553,California,Upham
+4,Plaza,Lexington,United States,84,Kentucky,Westend
+5,Road,Irving,United States,7995,Texas,Shoshone
+6,Alley,Tacoma,United States,702,Washington,Amoth
+7,Pass,Worcester,United States,1830,Massachusetts,Rockefeller
+8,Hill,Mobile,United States,0,Alabama,Morning
+9,Lane,Laurel,United States,468,Maryland,Sachs
+10,Place,Joliet,United States,55,Illinois,Grim
+11,Lane,Austin,United States,655,Texas,Jackson
+12,Drive,Des Moines,United States,41,Iowa,Glendale
+13,Drive,Fredericksburg,United States,0294,Virginia,Butterfield
+14,Court,Salt Lake City,United States,0195,Utah,Stang
+15,Pass,Portland,United States,1,Oregon,Lerdahl
+16,Road,Charlotte,United States,946,North Carolina,Vidon
+17,Center,Oakland,United States,402,California,Hagan
+18,Circle,Washington,United States,9897,District of Columbia,Birchwood
+19,Avenue,San Diego,United States,4,California,Donald
+20,Street,Charleston,United States,86,South Carolina,Thackeray
+21,Parkway,Birmingham,United States,5334,Alabama,Green Ridge
+22,Park,El Paso,United States,398,Texas,David
+23,Trail,Fort Worth,United States,005,Texas,Southridge
+24,Terrace,Portsmouth,United States,359,New Hampshire,Stephen
+25,Circle,Philadelphia,United States,3638,Pennsylvania,Calypso
+26,Parkway,Amarillo,United States,1,Texas,Butterfield
+27,Drive,Los Angeles,United States,4852,California,Doe Crossing
+28,Road,Sacramento,United States,59501,California,Claremont
+29,Avenue,Wichita,United States,7022,Kansas,Memorial
+30,Point,Kansas City,United States,7229,Missouri,Killdeer
+31,Pass,Detroit,United States,33,Michigan,Ridgeview
+32,Way,Saint Paul,United States,7773,Minnesota,John Wall
+33,Avenue,Portland,United States,59905,Oregon,Sauthoff
+34,Plaza,Cincinnati,United States,04786,Ohio,Basil
+35,Parkway,Arlington,United States,2032,Virginia,Fuller
+36,Road,Houston,United States,72,Texas,Springview
+37,Drive,Boise,United States,9398,Idaho,Dottie
+38,Circle,Rockville,United States,4770,Maryland,Mesta
+39,Alley,Detroit,United States,7077,Michigan,Service
+40,Road,Boise,United States,755,Idaho,Laurel
+41,Pass,Anchorage,United States,77454,Alaska,Washington
+42,Circle,Phoenix,United States,3,Arizona,Mallory
+43,Pass,Wichita Falls,United States,27853,Texas,Hansons
+44,Crossing,Baton Rouge,United States,0,Louisiana,Briar Crest
+45,Junction,Alexandria,United States,46355,Louisiana,Westport
+46,Street,Myrtle Beach,United States,616,South Carolina,Waubesa
+47,Center,Erie,United States,004,Pennsylvania,Oriole
+48,Junction,Hicksville,United States,9,New York,Grasskamp
+49,Street,Lakeland,United States,1051,Florida,Hansons
+50,Crossing,Punta Gorda,United States,69692,Florida,Shopko
+51,Circle,Arlington,United States,6862,Texas,Walton
+52,Plaza,Dallas,United States,51273,Texas,Anhalt
+53,Avenue,Houston,United States,9,Texas,Boyd
+54,Pass,Charleston,United States,35,West Virginia,Dahle
+55,Street,Boston,United States,05,Massachusetts,Katie
+56,Point,Washington,United States,22309,District of Columbia,Scott
+57,Circle,West Palm Beach,United States,3610,Florida,Summer Ridge
+58,Pass,Denver,United States,831,Colorado,Hudson
+59,Way,Wilmington,United States,7958,Delaware,Briar Crest
+60,Crossing,Santa Fe,United States,4,New Mexico,Caliangt
+61,Trail,Nashville,United States,122,Tennessee,Warbler
+62,Court,San Diego,United States,09380,California,Mariners Cove
+63,Place,Stamford,United States,54722,Connecticut,Merrick
+64,Way,Arlington,United States,81,Texas,Hollow Ridge
+65,Pass,Winston Salem,United States,471,North Carolina,Quincy
+66,Terrace,Lincoln,United States,5,Nebraska,Judy
+67,Way,Sacramento,United States,56156,California,Northland
+68,Alley,Omaha,United States,7894,Nebraska,Hovde
+69,Plaza,Saint Louis,United States,133,Missouri,Armistice
+70,Pass,Dallas,United States,04,Texas,Delladonna
+71,Lane,Macon,United States,83,Georgia,Monica
+72,Parkway,San Bernardino,United States,73,California,Sherman
+73,Terrace,Reno,United States,8,Nevada,Kenwood
+74,Drive,Houston,United States,593,Texas,Fordem
+75,Way,Newark,United States,92457,Delaware,Fairfield
+76,Court,Des Moines,United States,83,Iowa,Sunfield
+77,Way,Cleveland,United States,8916,Ohio,Monterey
+78,Lane,Dulles,United States,9,Virginia,Mallard
+79,Crossing,Salt Lake City,United States,82,Utah,Sutteridge
+80,Place,Brooklyn,United States,8,New York,Lillian
+81,Circle,Rochester,United States,1,New York,Shoshone
+82,Terrace,Portsmouth,United States,8,Virginia,Huxley
+83,Street,Chicago,United States,48774,Illinois,Green Ridge
+84,Point,Houston,United States,2,Texas,Glendale
+85,Avenue,Pasadena,United States,876,California,Cascade
+86,Way,Sandy,United States,57,Utah,Esch
+87,Lane,Seattle,United States,6,Washington,Norway Maple
+88,Court,Duluth,United States,624,Georgia,Twin Pines
+89,Plaza,New York City,United States,9,New York,Dexter
+90,Crossing,Greenville,United States,8543,South Carolina,Eagan
+91,Trail,Seattle,United States,416,Washington,Loomis
+92,Trail,Cleveland,United States,2,Ohio,Judy
+93,Avenue,Pittsburgh,United States,084,Pennsylvania,Harper
+94,Circle,Carol Stream,United States,135,Illinois,Walton
+95,Hill,Omaha,United States,1536,Nebraska,Coleman
+96,Center,Grand Rapids,United States,72,Michigan,New Castle
+97,Pass,Arlington,United States,30593,Virginia,Glendale
+98,Plaza,Kansas City,United States,42,Missouri,Blaine
+99,Plaza,Columbus,United States,053,Ohio,Sheridan
+100,Point,Lehigh Acres,United States,858,Florida,Welch
