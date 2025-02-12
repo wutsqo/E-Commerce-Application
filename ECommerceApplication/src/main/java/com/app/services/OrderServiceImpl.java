@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import com.app.entites.Bank;
 import com.app.entites.Cart;
 import com.app.entites.CartItem;
 import com.app.entites.Order;
@@ -24,6 +25,8 @@ import com.app.exceptions.ResourceNotFoundException;
 import com.app.payloads.OrderDTO;
 import com.app.payloads.OrderItemDTO;
 import com.app.payloads.OrderResponse;
+import com.app.payloads.OrderWithBankDTO;
+import com.app.repositories.BankRepo;
 import com.app.repositories.CartItemRepo;
 import com.app.repositories.CartRepo;
 import com.app.repositories.OrderItemRepo;
@@ -48,6 +51,9 @@ public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	private PaymentRepo paymentRepo;
+
+	@Autowired
+	private BankRepo bankRepo;
 
 	@Autowired
 	public OrderItemRepo orderItemRepo;
@@ -124,6 +130,75 @@ public class OrderServiceImpl implements OrderService {
 		});
 
 		OrderDTO orderDTO = modelMapper.map(savedOrder, OrderDTO.class);
+		
+		orderItems.forEach(item -> orderDTO.getOrderItems().add(modelMapper.map(item, OrderItemDTO.class)));
+
+		return orderDTO;
+	}
+
+	@Override
+	public OrderWithBankDTO placeOrder(String email, Long cartId, String paymentMethod, Long bankId) {
+		Cart cart = cartRepo.findCartByEmailAndCartId(email, cartId);
+
+		if (cart == null) {
+			throw new ResourceNotFoundException("Cart", "cartId", cartId);
+		}
+
+		Order order = new Order();
+
+		order.setEmail(email);
+		order.setOrderDate(LocalDate.now());
+
+		order.setTotalAmount(cart.getTotalPrice());
+		order.setOrderStatus("Order Accepted !");
+
+		Bank bank = bankRepo.findById(bankId)
+				.orElseThrow(() -> new ResourceNotFoundException("Bank", "bankId", bankId));
+		
+		Payment payment = new Payment();
+		payment.setOrder(order);
+		payment.setPaymentMethod(paymentMethod);
+		payment.setBank(bank);
+
+		payment = paymentRepo.save(payment);
+
+		order.setPayment(payment);
+
+		Order savedOrder = orderRepo.save(order);
+
+		List<CartItem> cartItems = cart.getCartItems();
+
+		if (cartItems.size() == 0) {
+			throw new APIException("Cart is empty");
+		}
+
+		List<OrderItem> orderItems = new ArrayList<>();
+
+		for (CartItem cartItem : cartItems) {
+			OrderItem orderItem = new OrderItem();
+
+			orderItem.setProduct(cartItem.getProduct());
+			orderItem.setQuantity(cartItem.getQuantity());
+			orderItem.setDiscount(cartItem.getDiscount());
+			orderItem.setOrderedProductPrice(cartItem.getProductPrice());
+			orderItem.setOrder(savedOrder);
+
+			orderItems.add(orderItem);
+		}
+
+		orderItems = orderItemRepo.saveAll(orderItems);
+
+		cart.getCartItems().forEach(item -> {
+			int quantity = item.getQuantity();
+
+			Product product = item.getProduct();
+
+			cartService.deleteProductFromCart(cartId, item.getProduct().getProductId());
+
+			product.setQuantity(product.getQuantity() - quantity);
+		});
+
+		OrderWithBankDTO orderDTO = modelMapper.map(savedOrder, OrderWithBankDTO.class);
 		
 		orderItems.forEach(item -> orderDTO.getOrderItems().add(modelMapper.map(item, OrderItemDTO.class)));
 

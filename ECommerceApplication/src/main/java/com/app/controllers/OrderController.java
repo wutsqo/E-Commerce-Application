@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.app.config.AppConstants;
 import com.app.payloads.OrderDTO;
 import com.app.payloads.OrderResponse;
+import com.app.payloads.OrderWithBankDTO;
 import com.app.services.OrderService;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
@@ -34,6 +35,13 @@ public class OrderController {
 		
 		return new ResponseEntity<OrderDTO>(order, HttpStatus.CREATED);
 	}
+
+	@PostMapping("/public/users/{email}/carts/{cartId}/payments/{paymentMethod}/banks/{bank}/order")
+	public ResponseEntity<OrderWithBankDTO> orderProductsWithBank(@PathVariable String email, @PathVariable Long cartId, @PathVariable String paymentMethod, @PathVariable Long bank) {
+		OrderWithBankDTO order = orderService.placeOrder(email, cartId, paymentMethod, bank);
+		
+		return new ResponseEntity<OrderWithBankDTO>(order, HttpStatus.CREATED);
+	}																	
 
 	@GetMapping("/admin/orders")
 	public ResponseEntity<OrderResponse> getAllOrders(
