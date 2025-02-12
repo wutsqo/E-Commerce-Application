@@ -1,4 +1,4 @@
-id,building_name,city,country,pincode,state,street
+address_id,building_name,city,country,pincode,state,street
 1,Terrace,Saint Cloud,United States,2264,Minnesota,Scofield
 2,Pass,Rochester,United States,506,New York,Sloan
 3,Road,Sacramento,United States,553,California,Upham
