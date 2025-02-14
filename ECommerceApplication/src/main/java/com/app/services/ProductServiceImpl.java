@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.app.entites.Brand;
+import com.app.repositories.BrandRepo;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,6 +51,9 @@ public class ProductServiceImpl implements ProductService {
 
 	@Autowired
 	private ModelMapper modelMapper;
+
+	@Autowired
+	private BrandRepo brandRepo;
 
 	@Value("${project.image}")
 	private String path;
@@ -248,6 +253,33 @@ public class ProductServiceImpl implements ProductService {
 		productRepo.delete(product);
 
 		return "Product with productId: " + productId + " deleted successfully !!!";
+	}
+
+	@Override
+	public ProductResponse getProductsByBrand(Long brandId, Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
+
+		Brand brand = brandRepo.findById(brandId)
+				.orElseThrow(() -> new ResourceNotFoundException("Brand", "brandId", brandId));
+
+		Sort sort = (sortDir.equalsIgnoreCase("asc")) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
+		Pageable p = PageRequest.of(pageNumber, pageSize, sort);
+
+		Page<Product> products = productRepo.findByBrand(brand, p);
+
+		List<Product> allProducts = productRepo.findByBrand(brand);
+
+		List<ProductDTO> productDtos = products.getContent().stream()
+				.map(product -> modelMapper.map(product, ProductDTO.class)).collect(Collectors.toList());
+
+		ProductResponse productResponse = new ProductResponse();
+		productResponse.setContent(productDtos);
+		productResponse.setPageNumber(products.getNumber());
+		productResponse.setPageSize(products.getSize());
+		productResponse.setTotalElements(products.getTotalElements());
+		productResponse.setTotalPages(products.getTotalPages());
+		productResponse.setLastPage(products.isLast());
+
+		return productResponse;
 	}
 
 }
