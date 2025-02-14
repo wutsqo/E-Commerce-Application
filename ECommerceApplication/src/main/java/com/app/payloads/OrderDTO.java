@@ -18,6 +18,8 @@ public class OrderDTO {
 	private List<OrderItemDTO> orderItems = new ArrayList<>();
 	private LocalDate orderDate;
 	private PaymentDTO payment;
+	private Double discountAmount;
+	private Double totalAmountBeforeDiscount;
 	private Double totalAmount;
 	private String orderStatus;
 
