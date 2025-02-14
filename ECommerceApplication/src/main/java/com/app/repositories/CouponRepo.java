@@ -7,6 +7,6 @@ import com.app.entites.Coupon;
 
 @Repository
 public interface CouponRepo extends JpaRepository<Coupon, Long>{
-
+        
     Coupon findByCouponCode(String couponCode);
 }

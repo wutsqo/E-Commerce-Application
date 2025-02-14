@@ -40,7 +40,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/public/users/:userId",
+													"raw": "{{baseUrl}}/api/public/users/8",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -48,14 +48,7 @@
 														"api",
 														"public",
 														"users",
-														":userId"
-													],
-													"variable": [
-														{
-															"key": "userId",
-															"value": "<long>",
-															"description": "(Required) "
-														}
+														"8"
 													]
 												}
 											},
@@ -133,7 +126,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"userId\": \"<long>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"mobileNumber\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"roles\": [\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    },\n    {\n      \"roleId\": \"<long>\",\n      \"roleName\": \"<string>\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": \"<long>\",\n    \"street\": \"<string>\",\n    \"buildingName\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"pincode\": \"<string>\"\n  },\n  \"cart\": {\n    \"cartId\": \"<long>\",\n    \"totalPrice\": \"<double>\",\n    \"products\": [\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      }\n    ]\n  }\n}",
+													"raw": "{\n  \"userId\": \"8\",\n  \"firstName\": \"Ronaldo\"  \n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -142,7 +135,7 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/public/users/:userId",
+													"raw": "{{baseUrl}}/api/public/users/8",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -150,14 +143,7 @@
 														"api",
 														"public",
 														"users",
-														":userId"
-													],
-													"variable": [
-														{
-															"key": "userId",
-															"value": "<long>",
-															"description": "(Required) "
-														}
+														"8"
 													]
 												}
 											},
@@ -264,7 +250,7 @@
 																							}
 																						],
 																						"url": {
-																							"raw": "{{baseUrl}}/api/public/users/:email/carts/:cartId/payments/:paymentMethod/order",
+																							"raw": "{{baseUrl}}/api/public/users/thastilow1@yahoo.co.jp/carts/6/payments/Gopay/order",
 																							"host": [
 																								"{{baseUrl}}"
 																							],
@@ -272,28 +258,194 @@
 																								"api",
 																								"public",
 																								"users",
-																								":email",
+																								"thastilow1@yahoo.co.jp",
 																								"carts",
-																								":cartId",
+																								"6",
 																								"payments",
-																								":paymentMethod",
+																								"Gopay",
+																								"order"
+																							]
+																						}
+																					},
+																					"response": [
+																						{
+																							"name": "OK",
+																							"originalRequest": {
+																								"method": "POST",
+																								"header": [
+																									{
+																										"key": "Accept",
+																										"value": "*/*"
+																									},
+																									{
+																										"key": "Authorization",
+																										"value": "Bearer <token>",
+																										"description": "Added as a part of security scheme: bearer"
+																									}
+																								],
+																								"url": {
+																									"raw": "{{baseUrl}}/api/public/users/:email/carts/:cartId/payments/:paymentMethod/order",
+																									"host": [
+																										"{{baseUrl}}"
+																									],
+																									"path": [
+																										"api",
+																										"public",
+																										"users",
+																										":email",
+																										"carts",
+																										":cartId",
+																										"payments",
+																										":paymentMethod",
+																										"order"
+																									],
+																									"variable": [
+																										{
+																											"key": "email"
+																										},
+																										{
+																											"key": "cartId"
+																										},
+																										{
+																											"key": "paymentMethod"
+																										}
+																									]
+																								}
+																							},
+																							"status": "OK",
+																							"code": 200,
+																							"_postman_previewlanguage": "text",
+																							"header": [
+																								{
+																									"key": "Content-Type",
+																									"value": "*/*"
+																								}
+																							],
+																							"cookie": [],
+																							"body": "{\n  \"orderId\": \"<long>\",\n  \"email\": \"<string>\",\n  \"orderItems\": [\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    },\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    }\n  ],\n  \"orderDate\": \"<date>\",\n  \"payment\": {\n    \"paymentId\": \"<long>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"orderStatus\": \"<string>\"\n}"
+																						},
+																						{
+																							"name": "order Products",
+																							"originalRequest": {
+																								"method": "POST",
+																								"header": [
+																									{
+																										"key": "Accept",
+																										"value": "*/*"
+																									}
+																								],
+																								"url": {
+																									"raw": "{{baseUrl}}/api/public/users/thastilow1@yahoo.co.jp/carts/6/payments/Gopay/order",
+																									"host": [
+																										"{{baseUrl}}"
+																									],
+																									"path": [
+																										"api",
+																										"public",
+																										"users",
+																										"thastilow1@yahoo.co.jp",
+																										"carts",
+																										"6",
+																										"payments",
+																										"Gopay",
+																										"order"
+																									]
+																								}
+																							},
+																							"status": "Created",
+																							"code": 201,
+																							"_postman_previewlanguage": "json",
+																							"header": [
+																								{
+																									"key": "X-Content-Type-Options",
+																									"value": "nosniff"
+																								},
+																								{
+																									"key": "X-XSS-Protection",
+																									"value": "0"
+																								},
+																								{
+																									"key": "Cache-Control",
+																									"value": "no-cache, no-store, max-age=0, must-revalidate"
+																								},
+																								{
+																									"key": "Pragma",
+																									"value": "no-cache"
+																								},
+																								{
+																									"key": "Expires",
+																									"value": "0"
+																								},
+																								{
+																									"key": "X-Frame-Options",
+																									"value": "DENY"
+																								},
+																								{
+																									"key": "Content-Type",
+																									"value": "application/json"
+																								},
+																								{
+																									"key": "Transfer-Encoding",
+																									"value": "chunked"
+																								},
+																								{
+																									"key": "Date",
+																									"value": "Wed, 12 Feb 2025 18:14:21 GMT"
+																								},
+																								{
+																									"key": "Keep-Alive",
+																									"value": "timeout=60"
+																								},
+																								{
+																									"key": "Connection",
+																									"value": "keep-alive"
+																								}
+																							],
+																							"cookie": [],
+																							"body": "{\n    \"orderId\": 2,\n    \"email\": \"thastilow1@yahoo.co.jp\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 1,\n            \"product\": {\n                \"productId\": 3,\n                \"productName\": \"Salt - Celery\",\n                \"image\": \"http://dummyimage.com/218x100.png/cc0000/ffffff\",\n                \"description\": \"luctus et\",\n                \"quantity\": 657,\n                \"price\": 56781,\n                \"discount\": 7703,\n                \"specialPrice\": 10950\n            },\n            \"quantity\": 2,\n            \"discount\": 7703,\n            \"orderedProductPrice\": 10950\n        }\n    ],\n    \"orderDate\": \"2025-02-13\",\n    \"payment\": {\n        \"paymentId\": 3,\n        \"paymentMethod\": \"Gopay\"\n    },\n    \"totalAmount\": 21900,\n    \"orderStatus\": \"Order Accepted !\"\n}"
+																						}
+																					]
+																				},
+																				{
+																					"name": "order Products with Coupon",
+																					"request": {
+																						"auth": {
+																							"type": "bearer",
+																							"bearer": [
+																								{
+																									"key": "token",
+																									"value": "{{bearerToken}}",
+																									"type": "string"
+																								}
+																							]
+																						},
+																						"method": "POST",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "*/*"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/api/public/users/thastilow1@yahoo.co.jp/carts/6/payments/Gopay/order?coupon=RIZZ",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"api",
+																								"public",
+																								"users",
+																								"thastilow1@yahoo.co.jp",
+																								"carts",
+																								"6",
+																								"payments",
+																								"Gopay",
 																								"order"
 																							],
-																							"variable": [
+																							"query": [
 																								{
-																									"key": "email",
-																									"value": "<string>",
-																									"description": "(Required) "
-																								},
-																								{
-																									"key": "cartId",
-																									"value": "<long>",
-																									"description": "(Required) "
-																								},
-																								{
-																									"key": "paymentMethod",
-																									"value": "<string>",
-																									"description": "(Required) "
+																									"key": "coupon",
+																									"value": "RIZZ"
 																								}
 																							]
 																						}
@@ -354,6 +506,265 @@
 																							],
 																							"cookie": [],
 																							"body": "{\n  \"orderId\": \"<long>\",\n  \"email\": \"<string>\",\n  \"orderItems\": [\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    },\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    }\n  ],\n  \"orderDate\": \"<date>\",\n  \"payment\": {\n    \"paymentId\": \"<long>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"orderStatus\": \"<string>\"\n}"
+																						},
+																						{
+																							"name": "order Products",
+																							"originalRequest": {
+																								"method": "POST",
+																								"header": [
+																									{
+																										"key": "Accept",
+																										"value": "*/*"
+																									}
+																								],
+																								"url": {
+																									"raw": "{{baseUrl}}/api/public/users/thastilow1@yahoo.co.jp/carts/6/payments/Gopay/order",
+																									"host": [
+																										"{{baseUrl}}"
+																									],
+																									"path": [
+																										"api",
+																										"public",
+																										"users",
+																										"thastilow1@yahoo.co.jp",
+																										"carts",
+																										"6",
+																										"payments",
+																										"Gopay",
+																										"order"
+																									]
+																								}
+																							},
+																							"status": "Created",
+																							"code": 201,
+																							"_postman_previewlanguage": "json",
+																							"header": [
+																								{
+																									"key": "X-Content-Type-Options",
+																									"value": "nosniff"
+																								},
+																								{
+																									"key": "X-XSS-Protection",
+																									"value": "0"
+																								},
+																								{
+																									"key": "Cache-Control",
+																									"value": "no-cache, no-store, max-age=0, must-revalidate"
+																								},
+																								{
+																									"key": "Pragma",
+																									"value": "no-cache"
+																								},
+																								{
+																									"key": "Expires",
+																									"value": "0"
+																								},
+																								{
+																									"key": "X-Frame-Options",
+																									"value": "DENY"
+																								},
+																								{
+																									"key": "Content-Type",
+																									"value": "application/json"
+																								},
+																								{
+																									"key": "Transfer-Encoding",
+																									"value": "chunked"
+																								},
+																								{
+																									"key": "Date",
+																									"value": "Wed, 12 Feb 2025 18:14:21 GMT"
+																								},
+																								{
+																									"key": "Keep-Alive",
+																									"value": "timeout=60"
+																								},
+																								{
+																									"key": "Connection",
+																									"value": "keep-alive"
+																								}
+																							],
+																							"cookie": [],
+																							"body": "{\n    \"orderId\": 2,\n    \"email\": \"thastilow1@yahoo.co.jp\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 1,\n            \"product\": {\n                \"productId\": 3,\n                \"productName\": \"Salt - Celery\",\n                \"image\": \"http://dummyimage.com/218x100.png/cc0000/ffffff\",\n                \"description\": \"luctus et\",\n                \"quantity\": 657,\n                \"price\": 56781,\n                \"discount\": 7703,\n                \"specialPrice\": 10950\n            },\n            \"quantity\": 2,\n            \"discount\": 7703,\n            \"orderedProductPrice\": 10950\n        }\n    ],\n    \"orderDate\": \"2025-02-13\",\n    \"payment\": {\n        \"paymentId\": 3,\n        \"paymentMethod\": \"Gopay\"\n    },\n    \"totalAmount\": 21900,\n    \"orderStatus\": \"Order Accepted !\"\n}"
+																						}
+																					]
+																				},
+																				{
+																					"name": "order Products With Bank",
+																					"request": {
+																						"auth": {
+																							"type": "bearer",
+																							"bearer": [
+																								{
+																									"key": "token",
+																									"value": "{{bearerToken}}",
+																									"type": "string"
+																								}
+																							]
+																						},
+																						"method": "POST",
+																						"header": [
+																							{
+																								"key": "Accept",
+																								"value": "*/*"
+																							}
+																						],
+																						"url": {
+																							"raw": "{{baseUrl}}/api/public/users/thastilow1@yahoo.co.jp/carts/6/payments/Bank/banks/2/order",
+																							"host": [
+																								"{{baseUrl}}"
+																							],
+																							"path": [
+																								"api",
+																								"public",
+																								"users",
+																								"thastilow1@yahoo.co.jp",
+																								"carts",
+																								"6",
+																								"payments",
+																								"Bank",
+																								"banks",
+																								"2",
+																								"order"
+																							]
+																						}
+																					},
+																					"response": [
+																						{
+																							"name": "OK",
+																							"originalRequest": {
+																								"method": "POST",
+																								"header": [
+																									{
+																										"key": "Accept",
+																										"value": "*/*"
+																									},
+																									{
+																										"key": "Authorization",
+																										"value": "Bearer <token>",
+																										"description": "Added as a part of security scheme: bearer"
+																									}
+																								],
+																								"url": {
+																									"raw": "{{baseUrl}}/api/public/users/:email/carts/:cartId/payments/:paymentMethod/order",
+																									"host": [
+																										"{{baseUrl}}"
+																									],
+																									"path": [
+																										"api",
+																										"public",
+																										"users",
+																										":email",
+																										"carts",
+																										":cartId",
+																										"payments",
+																										":paymentMethod",
+																										"order"
+																									],
+																									"variable": [
+																										{
+																											"key": "email"
+																										},
+																										{
+																											"key": "cartId"
+																										},
+																										{
+																											"key": "paymentMethod"
+																										}
+																									]
+																								}
+																							},
+																							"status": "OK",
+																							"code": 200,
+																							"_postman_previewlanguage": "text",
+																							"header": [
+																								{
+																									"key": "Content-Type",
+																									"value": "*/*"
+																								}
+																							],
+																							"cookie": [],
+																							"body": "{\n  \"orderId\": \"<long>\",\n  \"email\": \"<string>\",\n  \"orderItems\": [\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    },\n    {\n      \"orderItemId\": \"<long>\",\n      \"product\": {\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"image\": \"<string>\",\n        \"description\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"price\": \"<double>\",\n        \"discount\": \"<double>\",\n        \"specialPrice\": \"<double>\"\n      },\n      \"quantity\": \"<integer>\",\n      \"discount\": \"<double>\",\n      \"orderedProductPrice\": \"<double>\"\n    }\n  ],\n  \"orderDate\": \"<date>\",\n  \"payment\": {\n    \"paymentId\": \"<long>\",\n    \"paymentMethod\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"orderStatus\": \"<string>\"\n}"
+																						},
+																						{
+																							"name": "order Products",
+																							"originalRequest": {
+																								"method": "POST",
+																								"header": [
+																									{
+																										"key": "Accept",
+																										"value": "*/*"
+																									}
+																								],
+																								"url": {
+																									"raw": "{{baseUrl}}/api/public/users/thastilow1@yahoo.co.jp/carts/6/payments/Gopay/order",
+																									"host": [
+																										"{{baseUrl}}"
+																									],
+																									"path": [
+																										"api",
+																										"public",
+																										"users",
+																										"thastilow1@yahoo.co.jp",
+																										"carts",
+																										"6",
+																										"payments",
+																										"Gopay",
+																										"order"
+																									]
+																								}
+																							},
+																							"status": "Created",
+																							"code": 201,
+																							"_postman_previewlanguage": "json",
+																							"header": [
+																								{
+																									"key": "X-Content-Type-Options",
+																									"value": "nosniff"
+																								},
+																								{
+																									"key": "X-XSS-Protection",
+																									"value": "0"
+																								},
+																								{
+																									"key": "Cache-Control",
+																									"value": "no-cache, no-store, max-age=0, must-revalidate"
+																								},
+																								{
+																									"key": "Pragma",
+																									"value": "no-cache"
+																								},
+																								{
+																									"key": "Expires",
+																									"value": "0"
+																								},
+																								{
+																									"key": "X-Frame-Options",
+																									"value": "DENY"
+																								},
+																								{
+																									"key": "Content-Type",
+																									"value": "application/json"
+																								},
+																								{
+																									"key": "Transfer-Encoding",
+																									"value": "chunked"
+																								},
+																								{
+																									"key": "Date",
+																									"value": "Wed, 12 Feb 2025 18:14:21 GMT"
+																								},
+																								{
+																									"key": "Keep-Alive",
+																									"value": "timeout=60"
+																								},
+																								{
+																									"key": "Connection",
+																									"value": "keep-alive"
+																								}
+																							],
+																							"cookie": [],
+																							"body": "{\n    \"orderId\": 2,\n    \"email\": \"thastilow1@yahoo.co.jp\",\n    \"orderItems\": [\n        {\n            \"orderItemId\": 1,\n            \"product\": {\n                \"productId\": 3,\n                \"productName\": \"Salt - Celery\",\n                \"image\": \"http://dummyimage.com/218x100.png/cc0000/ffffff\",\n                \"description\": \"luctus et\",\n                \"quantity\": 657,\n                \"price\": 56781,\n                \"discount\": 7703,\n                \"specialPrice\": 10950\n            },\n            \"quantity\": 2,\n            \"discount\": 7703,\n            \"orderedProductPrice\": 10950\n        }\n    ],\n    \"orderDate\": \"2025-02-13\",\n    \"payment\": {\n        \"paymentId\": 3,\n        \"paymentMethod\": \"Gopay\"\n    },\n    \"totalAmount\": 21900,\n    \"orderStatus\": \"Order Accepted !\"\n}"
 																						}
 																					]
 																				}
@@ -494,7 +905,7 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl}}/api/public/users/:email/orders/:orderId",
+																	"raw": "{{baseUrl}}/api/public/users/ltorrent0@wsj.com/orders/:orderId",
 																	"host": [
 																		"{{baseUrl}}"
 																	],
@@ -502,16 +913,11 @@
 																		"api",
 																		"public",
 																		"users",
-																		":email",
+																		"ltorrent0@wsj.com",
 																		"orders",
 																		":orderId"
 																	],
 																	"variable": [
-																		{
-																			"key": "email",
-																			"value": "<string>",
-																			"description": "(Required) "
-																		},
 																		{
 																			"key": "orderId",
 																			"value": "<long>",
@@ -596,7 +1002,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/public/users/:email/orders",
+															"raw": "{{baseUrl}}/api/public/users/ltorrent0@wsj.com/orders",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -604,15 +1010,8 @@
 																"api",
 																"public",
 																"users",
-																":email",
+																"ltorrent0@wsj.com",
 																"orders"
-															],
-															"variable": [
-																{
-																	"key": "email",
-																	"value": "<string>",
-																	"description": "(Required) "
-																}
 															]
 														}
 													},
@@ -822,7 +1221,7 @@
 																					}
 																				],
 																				"url": {
-																					"raw": "{{baseUrl}}/api/public/carts/:cartId/products/:productId/quantity/:quantity",
+																					"raw": "{{baseUrl}}/api/public/carts/6/products/3/quantity/2",
 																					"host": [
 																						"{{baseUrl}}"
 																					],
@@ -830,28 +1229,11 @@
 																						"api",
 																						"public",
 																						"carts",
-																						":cartId",
+																						"6",
 																						"products",
-																						":productId",
+																						"3",
 																						"quantity",
-																						":quantity"
-																					],
-																					"variable": [
-																						{
-																							"key": "cartId",
-																							"value": "<long>",
-																							"description": "(Required) "
-																						},
-																						{
-																							"key": "productId",
-																							"value": "<long>",
-																							"description": "(Required) "
-																						},
-																						{
-																							"key": "quantity",
-																							"value": "<integer>",
-																							"description": "(Required) "
-																						}
+																						"2"
 																					]
 																				}
 																			},
@@ -948,7 +1330,7 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl}}/api/public/carts/:cartId/product/:productId",
+																	"raw": "{{baseUrl}}/api/public/carts/6/product/1",
 																	"host": [
 																		"{{baseUrl}}"
 																	],
@@ -956,21 +1338,9 @@
 																		"api",
 																		"public",
 																		"carts",
-																		":cartId",
+																		"6",
 																		"product",
-																		":productId"
-																	],
-																	"variable": [
-																		{
-																			"key": "cartId",
-																			"value": "<long>",
-																			"description": "(Required) "
-																		},
-																		{
-																			"key": "productId",
-																			"value": "<long>",
-																			"description": "(Required) "
-																		}
+																		"1"
 																	]
 																}
 															},
@@ -1065,7 +1435,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/public/products/keyword/:keyword?pageNumber=0&pageSize=2&sortBy=productId&sortOrder=asc",
+															"raw": "{{baseUrl}}/api/public/products/keyword/Cookie?pageNumber=0&pageSize=2&sortBy=productId&sortOrder=asc",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -1074,7 +1444,7 @@
 																"public",
 																"products",
 																"keyword",
-																":keyword"
+																"Cookie"
 															],
 															"query": [
 																{
@@ -1092,13 +1462,6 @@
 																{
 																	"key": "sortOrder",
 																	"value": "asc"
-																}
-															],
-															"variable": [
-																{
-																	"key": "keyword",
-																	"value": "<string>",
-																	"description": "(Required) "
 																}
 															]
 														}
@@ -1316,7 +1679,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/public/categories/:categoryId/products?pageNumber=0&pageSize=2&sortBy=productId&sortOrder=asc",
+															"raw": "{{baseUrl}}/api/public/categories/1/products?pageNumber=0&pageSize=2&sortBy=productId&sortOrder=asc",
 															"host": [
 																"{{baseUrl}}"
 															],
@@ -1324,7 +1687,7 @@
 																"api",
 																"public",
 																"categories",
-																":categoryId",
+																"1",
 																"products"
 															],
 															"query": [
@@ -1343,13 +1706,6 @@
 																{
 																	"key": "sortOrder",
 																	"value": "asc"
-																}
-															],
-															"variable": [
-																{
-																	"key": "categoryId",
-																	"value": "<long>",
-																	"description": "(Required) "
 																}
 															]
 														}
@@ -1783,7 +2139,7 @@
 											"bearer": [
 												{
 													"key": "token",
-													"value": "Bearer {{bearerToken}}",
+													"value": "{{bearerToken}}",
 													"type": "string"
 												}
 											]
@@ -2379,7 +2735,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"categoryName\": \"<string>\",\n  \"categoryId\": \"<long>\",\n  \"products\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n    }\n  ]\n}",
+													"raw": "{\n  \"categoryName\": \"Bolaaa\"\n  \n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -2388,7 +2744,7 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/admin/categories/:categoryId",
+													"raw": "{{baseUrl}}/api/admin/categories/19",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -2396,14 +2752,7 @@
 														"api",
 														"admin",
 														"categories",
-														":categoryId"
-													],
-													"variable": [
-														{
-															"key": "categoryId",
-															"value": "<long>",
-															"description": "(Required) "
-														}
+														"19"
 													]
 												}
 											},
@@ -2490,7 +2839,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/admin/categories/:categoryId",
+													"raw": "{{baseUrl}}/api/admin/categories/20",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -2498,14 +2847,7 @@
 														"api",
 														"admin",
 														"categories",
-														":categoryId"
-													],
-													"variable": [
-														{
-															"key": "categoryId",
-															"value": "<long>",
-															"description": "(Required) "
-														}
+														"20"
 													]
 												}
 											},
@@ -2588,7 +2930,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/admin/addresses/:addressId",
+													"raw": "{{baseUrl}}/api/admin/addresses/12",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -2596,14 +2938,7 @@
 														"api",
 														"admin",
 														"addresses",
-														":addressId"
-													],
-													"variable": [
-														{
-															"key": "addressId",
-															"value": "<long>",
-															"description": "(Required) "
-														}
+														"12"
 													]
 												}
 											},
@@ -2681,7 +3016,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"buildingName\": \"<string>\",\n  \"city\": \"<string>\",\n  \"country\": \"<string>\",\n  \"pincode\": \"<string>\",\n  \"state\": \"<string>\",\n  \"street\": \"<string>\",\n  \"addressId\": \"<long>\",\n  \"users\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/User detected>\"\n    }\n  ]\n}",
+													"raw": "{\n    \"buildingName\": \"<string>\",\n    \"city\": \"<string>\",\n    \"country\": \"<string>\",\n    \"pincode\": \"<string>\",\n    \"state\": \"<string>\",\n    \"street\": \"<string>\",\n    \"addressId\": \"<long>\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -2690,7 +3025,7 @@
 													}
 												},
 												"url": {
-													"raw": "{{baseUrl}}/api/admin/addresses/:addressId",
+													"raw": "{{baseUrl}}/api/admin/addresses/12",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -2698,14 +3033,7 @@
 														"api",
 														"admin",
 														"addresses",
-														":addressId"
-													],
-													"variable": [
-														{
-															"key": "addressId",
-															"value": "<long>",
-															"description": "(Required) "
-														}
+														"12"
 													]
 												}
 											},
@@ -2966,7 +3294,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"categoryName\": \"<string>\",\n  \"categoryId\": \"<long>\",\n  \"products\": [\n    {\n      \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n    },\n    {\n      \"value\": \"<Circular reference to #/components/schemas/Product detected>\"\n    }\n  ]\n}",
+											"raw": "{\n  \"categoryId\": 22,\n  \"categoryName\": \"pakaian\",\n  \"products\": [\n    {\n      \"productId\": 0,\n      \"productName\": \"string\",\n      \"image\": \"string\",\n      \"description\": \"string\",\n      \"quantity\": 0,\n      \"price\": 0,\n      \"discount\": 0,\n      \"specialPrice\": 0,\n      \"category\": \"string\",\n      \"products\": [\n        {\n          \"cartItemId\": 0,\n          \"cart\": {\n            \"cartId\": 0,\n            \"user\": {\n              \"userId\": 0,\n              \"firstName\": \"SUHSU\",\n              \"lastName\": \"bHEQmOMaMcveMgbzBXjG\",\n              \"mobileNumber\": \"2306173780\",\n              \"email\": \"string\",\n              \"password\": \"string\",\n              \"roles\": [\n                {\n                  \"roleId\": 0,\n                  \"roleName\": \"string\"\n                }\n              ],\n              \"addresses\": [\n                {\n                  \"addressId\": 0,\n                  \"street\": \"string\",\n                  \"buildingName\": \"string\",\n                  \"city\": \"string\",\n                  \"state\": \"string\",\n                  \"country\": \"string\",\n                  \"pincode\": \"string\",\n                  \"users\": [\n                    \"string\"\n                  ]\n                }\n              ],\n              \"cart\": \"string\"\n            },\n            \"cartItems\": [\n              \"string\"\n            ],\n            \"totalPrice\": 0\n          },\n          \"product\": \"string\",\n          \"quantity\": 0,\n          \"discount\": 0,\n          \"productPrice\": 0\n        }\n      ],\n      \"orderItems\": [\n        {\n          \"orderItemId\": 0,\n          \"product\": \"string\",\n          \"order\": {\n            \"orderId\": 0,\n            \"email\": \"string\",\n            \"orderItems\": [\n              \"string\"\n            ],\n            \"orderDate\": \"2025-02-10\",\n            \"payment\": {\n              \"paymentId\": 0,\n              \"order\": \"string\",\n              \"paymentMethod\": \"string\"\n            },\n            \"totalAmount\": 0,\n            \"orderStatus\": \"string\"\n          },\n          \"quantity\": 0,\n          \"discount\": 0,\n          \"orderedProductPrice\": 0\n        }\n      ]\n    }\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
@@ -3369,7 +3697,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"userId\": 19,\n  \"firstName\": \"Nevsa\",\n  \"lastName\": \"Ransfield\",\n  \"mobileNumber\": \"2917783707\",\n  \"email\": \"adaintryh@nih.gov\",\n  \"password\": \"tzaedgcfH\",\n  \"roles\": [\n    {\n      \"roleId\": 0,\n      \"roleName\": \"string\"\n    }\n  ],\n  \"address\": {\n    \"addressId\": 0,\n    \"street\": \"string\",\n    \"buildingName\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"pincode\": \"string\"\n  },\n  \"cart\": {\n    \"cartId\": 0,\n    \"totalPrice\": 0,\n    \"products\": [\n      {\n        \"productId\": 0,\n        \"productName\": \"string\",\n        \"image\": \"string\",\n        \"description\": \"string\",\n        \"quantity\": 0,\n        \"price\": 0,\n        \"discount\": 0,\n        \"specialPrice\": 0\n      }\n    ]\n  }\n}",
+									"raw": "{\n  \"userId\": 1,\n  \"firstName\": \"Laura\",\n  \"lastName\": \"Torrent\",\n  \"mobileNumber\": \"7133557946\",\n  \"email\": \"ltorrent0@wsj.com\",\n  \"password\": \"zvsuqmkq`@V\",\n  \"roles\": [\n    {\n      \"roleId\": 101,\n      \"roleName\": \"ADMIN\"\n    }\n  ]\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
@@ -3452,14 +3780,7 @@
 							"name": "login Handler",
 							"request": {
 								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{bearerToken}}",
-											"type": "string"
-										}
-									]
+									"type": "noauth"
 								},
 								"method": "POST",
 								"header": [
@@ -3474,7 +3795,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+									"raw": "{\n  \"email\": \"thastilow1@yahoo.co.jp\",\n  \"password\": \"kalovjxhXp\"\n}",
 									"options": {
 										"raw": {
 											"headerFamily": "json",
