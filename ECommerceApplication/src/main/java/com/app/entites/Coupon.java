@@ -22,9 +22,9 @@ public class Coupon {
 	private Long couponId;
 
 	@NotBlank
-    @Column(unique = true, nullable = false)
+	@Column(unique = true, nullable = false)
 	private String couponCode;
 
-    @Column(nullable = false)
-    private double discountAmount;
+	@Column(nullable = false)
+	private double discountAmount;
 }
