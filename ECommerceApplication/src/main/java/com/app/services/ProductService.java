@@ -26,4 +26,6 @@ public interface ProductService {
 
 	String deleteProduct(Long productId);
 	ProductResponse getProductsByBrand(Long brandId, Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
+
+	ProductResponse searchByCategoryAndBrand(Long categoryId, Long brandId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder);
 }

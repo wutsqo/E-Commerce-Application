@@ -281,5 +281,33 @@ public class ProductServiceImpl implements ProductService {
 
 		return productResponse;
 	}
+	@Override
+	public ProductResponse searchByCategoryAndBrand(Long categoryId, Long brandId, Integer pageNumber, Integer pageSize, String sortBy, String sortOrder) {
+		Category category = categoryRepo.findById(categoryId)
+				.orElseThrow(() -> new ResourceNotFoundException("Category", "categoryId", categoryId));
 
+		Brand brand = brandRepo.findById(brandId)
+				.orElseThrow(() -> new ResourceNotFoundException("Brand", "brandId", brandId));
+
+		Sort sortByAndOrder = sortOrder.equalsIgnoreCase("asc") ? Sort.by(sortBy).ascending()
+				: Sort.by(sortBy).descending();
+
+		Pageable pageDetails = PageRequest.of(pageNumber, pageSize, sortByAndOrder);
+		Page<Product> pageProducts = productRepo.findByCategoryAndBrand(category, brand, pageDetails);
+
+
+		List<ProductDTO> productDTOs = pageProducts.getContent().stream()
+				.map(p -> modelMapper.map(p, ProductDTO.class))
+				.collect(Collectors.toList());
+
+		ProductResponse productResponse = new ProductResponse();
+		productResponse.setContent(productDTOs);
+		productResponse.setPageNumber(pageProducts.getNumber());
+		productResponse.setPageSize(pageProducts.getSize());
+		productResponse.setTotalElements(pageProducts.getTotalElements());
+		productResponse.setTotalPages(pageProducts.getTotalPages());
+		productResponse.setLastPage(pageProducts.isLast());
+
+		return productResponse;
+	}
 }
